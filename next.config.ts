@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   assetPrefix: "/about-me/",
   reactStrictMode: true,
   images: {
-    domains: ["nxdus.github.io"],
+    domains: ["nxdus.github.io/about-me"],
   },
 };
 
