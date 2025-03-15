@@ -32,7 +32,7 @@ export function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
 
         return () =>
             window.removeEventListener("pointermove", handlePointerMove)
-    }, [])
+    }, [x, y, ref])
 
     return { x, y }
 }

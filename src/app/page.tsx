@@ -21,7 +21,7 @@ export default function Home() {
           <div className="text-center">
             <div className="mb-5 text-[#F9F7F0]">
               <h1 className="text-5xl">MY EXPERIENCE</h1>
-              <p className="text-2xl">What I've worked on so far</p>
+              <p className="text-2xl">What I&apos;ve worked on so far</p>
             </div>
             <motion.button whileHover={{ scale: 1.05, z:1 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorOpacity(0.85)} onHoverEnd={() => setCursorOpacity(1)} 
             className="uppercase text-[#4A4947] text-4xl px-10 py-0.5 pb-2 bg-[#F9F7F0] text-center rounded-full border-3 border-dashed">
@@ -63,7 +63,7 @@ export default function Home() {
         <article className="col-span-3 row-start-2 bg-[#FD5A46] rounded-4xl relative">
           <div className="text-start absolute top-12 left-20">
             <h1 className="text-[#F9F7F0] text-6xl uppercase">HELLO :)</h1>
-            <h1 className="text-[#F9F7F0] text-6xl uppercase">I'M PEERANUT</h1>
+            <h1 className="text-[#F9F7F0] text-6xl uppercase">I&apos;M PEERANUT</h1>
             <h1 className="text-[#F9F7F0] text-6xl uppercase">A Web Developer</h1>
             <p className="text-[#F9F7F0] text-lg lowercase absolute top-[70px] -right-36">( but you can call me paitong )</p>
             <Image src={"/lightning.svg"} alt="Lightning" width={30} height={53.08} className="absolute -bottom-1 -right-12" draggable={false} />
