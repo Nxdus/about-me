@@ -13,7 +13,7 @@ export default function Drag({ isHover }: Readonly<{ isHover: boolean }>) {
                 <motion.div
                     ref={ref}
                     style={{ x, y }}
-                    initial={{ opacity: 0, scale: 0 }}
+                    initial={{ opacity: 1, scale: 1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0 }}
                     className="w-12 h-12 bg-amber-950 rounded-full absolute z-10"
