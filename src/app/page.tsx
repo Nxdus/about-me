@@ -8,12 +8,12 @@ import Drag from "./components/cursor";
 
 export default function Home() {
 
-  const [cursorOpacity, setCursorOpacity] = useState(100);
+  const [cursorHover, setCursorHover] = useState(false);
 
   return (
     <>
 
-      <Drag opacity={cursorOpacity} />
+      <Drag isHover={cursorHover} />
 
       <main className="h-dvh grid grid-cols-5 grid-rows-3 gap-5 justify-center bg-[#F9F7F0] select-none px-20 py-5">
         <article className="col-span-2 bg-[#6F3CE7] rounded-4xl flex justify-center items-center gap-5">
@@ -23,7 +23,7 @@ export default function Home() {
               <h1 className="text-5xl">MY EXPERIENCE</h1>
               <p className="text-2xl">What I&apos;ve worked on so far</p>
             </div>
-            <motion.button whileHover={{ scale: 1.05, z:1 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorOpacity(0.85)} onHoverEnd={() => setCursorOpacity(1)} 
+            <motion.button whileHover={{ scale: 1.05, z:1 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorHover(true)} onHoverEnd={() => setCursorHover(false)} 
             className="uppercase text-[#4A4947] text-4xl px-10 py-0.5 pb-2 bg-[#F9F7F0] text-center rounded-full border-3 border-dashed">
               Explore
             </motion.button>
@@ -39,7 +39,7 @@ export default function Home() {
               <h1 className="text-6xl">THIS IS</h1>
               <h1 className="text-6xl">MY PROJECTS</h1>
             </div>
-            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorOpacity(0.85)} onHoverEnd={() => setCursorOpacity(1)} 
+            <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorHover(true)} onHoverEnd={() => setCursorHover(false)} 
             className="uppercase text-[#4A4947] text-4xl/tight px-10 py-0.5 pb-2 bg-[#F9F7F0] text-center rounded-full border-3 border-dashed">
               Explore
             </motion.button>
@@ -55,7 +55,7 @@ export default function Home() {
           </div>
           <ArrowBigUpIcon fill="#4A4947" color="#4A4947" size={120} className="absolute bottom-2 left-2 rotate-45" />
           <Image src={"/6.svg"} alt="book" width={172} height={172} draggable={false} />
-          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorOpacity(0.85)} onHoverEnd={() => setCursorOpacity(1)} 
+          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorHover(true)} onHoverEnd={() => setCursorHover(false)} 
           className="uppercase text-[#4A4947] text-4xl/tight px-10 py-0.5 pb-2 bg-[#F9F7F0] text-center rounded-full border-3 border-dashed">
             Read
           </motion.button>
@@ -68,7 +68,7 @@ export default function Home() {
             <p className="text-[#F9F7F0] text-lg lowercase absolute top-[70px] -right-36">( but you can call me paitong )</p>
             <Image src={"/lightning.svg"} alt="Lightning" width={30} height={53.08} className="absolute -bottom-1 -right-12" draggable={false} />
           </div>
-          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorOpacity(0.85)} onHoverEnd={() => setCursorOpacity(1)} 
+          <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.85 }} onHoverStart={() => setCursorHover(true)} onHoverEnd={() => setCursorHover(false)} 
           className="absolute bottom-8 right-18 uppercase text-[#4A4947] text-4xl/tight px-10 py-0.5 pb-2 bg-[#F9F7F0] text-center rounded-full border-3 border-dashed">
             Hire me
           </motion.button>
