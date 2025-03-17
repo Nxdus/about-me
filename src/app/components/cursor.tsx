@@ -9,7 +9,7 @@ export default function Drag({ isHover }: Readonly<{ isHover: boolean }>) {
 
     return (
         <AnimatePresence>
-            {!isHover && (
+            {!isHover ? (
                 <motion.div
                     ref={ref}
                     style={{ x, y }}
@@ -18,7 +18,7 @@ export default function Drag({ isHover }: Readonly<{ isHover: boolean }>) {
                     exit={{ opacity: 0, scale: 0 }}
                     className="w-12 h-12 bg-amber-950 rounded-full absolute z-10"
                 />
-            )}
+            ) : null}
         </AnimatePresence>
     )
 }
