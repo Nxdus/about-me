@@ -11,16 +11,27 @@ export default function Home() {
   const [cursorHover, setCursorHover] = useState(false);
 
   return (
-    <>
+    <section className="overflow-hidden">
 
       <Drag isHover={cursorHover} />
 
       <main className="h-dvh grid grid-cols-5 grid-rows-3 gap-5 justify-center bg-[#F9F7F0] select-none px-20 py-5">
-        <article className="col-span-2 bg-[#6F3CE7] rounded-4xl flex justify-center items-center gap-5">
+        <motion.article className="col-span-2 bg-[#6F3CE7] rounded-4xl flex justify-center items-center gap-5"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0, duration: 0.3 }}
+        >
           <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.5 }}
+            animate={{
+              scale: [1, 1.1, 1.1, 1],
+              rotate: [0, -25, 25, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              ease: [0, 0.71, 0.2, 1.01],
+              repeat: Infinity,
+              repeatDelay: 1,
+            }}
           >
             <Image src={'./3.svg'} alt="Ducky" width={125} height={168.81} className="drop-shadow-md" draggable={false} />
           </motion.div>
@@ -34,12 +45,19 @@ export default function Home() {
               Explore
             </motion.button>
           </div>
-        </article>
-        <article className="col-start-3 bg-[#01A56B] rounded-4xl flex justify-center items-center gap-5">
+        </motion.article>
+        <motion.article className="col-start-3 bg-[#01A56B] rounded-4xl flex justify-center items-center gap-5"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.3 }}
+        >
           <Image src={'./1.svg'} alt="Dokky" width={170} height={263.66} className="drop-shadow-md" draggable={false} />
-
-        </article>
-        <article className="col-span-2 col-start-4 bg-[#457FB2] rounded-4xl flex justify-center items-center relative">
+        </motion.article>
+        <motion.article className="col-span-2 col-start-4 bg-[#457FB2] rounded-4xl flex justify-center items-center relative"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.3 }}
+        >
           <div className="text-center">
             <div className="mb-5 text-[#F9F7F0]">
               <h1 className="text-6xl">THIS IS</h1>
@@ -52,8 +70,12 @@ export default function Home() {
           </div>
           <Image src={"./star.svg"} alt="Star" width={45} height={45} className="absolute top-10 right-20" draggable={false} />
           <Image src={"./star.svg"} alt="Star" width={45} height={45} className="absolute bottom-10 left-20" draggable={false} />
-        </article>
-        <article className="row-span-2 row-start-2 bg-[#FFBB4E] rounded-4xl flex justify-center items-center gap-8 flex-col relative">
+        </motion.article>
+        <motion.article className="row-span-2 row-start-2 bg-[#FFBB4E] rounded-4xl flex justify-center items-center gap-8 flex-col relative"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 0.9, duration: 0.3 }}
+        >
           <div className="text-center">
             <h1 className="text-[#F9F7F0] text-5xl uppercase">GO ON</h1>
             <h1 className="text-[#F9F7F0] text-5xl uppercase">ADVENTURE</h1>
@@ -65,8 +87,12 @@ export default function Home() {
             className="uppercase text-[#4A4947] text-4xl/tight px-10 py-0.5 pb-2 bg-[#F9F7F0] text-center rounded-full border-3 border-dashed">
             Read
           </motion.button>
-        </article>
-        <article className="col-span-3 row-start-2 bg-[#FD5A46] rounded-4xl relative">
+        </motion.article>
+        <motion.article className="col-span-3 row-start-2 bg-[#FD5A46] rounded-4xl relative"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1.2, duration: 0.3 }}
+        >
           <div className="text-start absolute top-12 left-20">
             <h1 className="text-[#F9F7F0] text-6xl uppercase">HELLO :)</h1>
             <h1 className="text-[#F9F7F0] text-6xl uppercase">I&apos;M PEERANUT</h1>
@@ -78,14 +104,26 @@ export default function Home() {
             className="absolute bottom-8 right-18 uppercase text-[#4A4947] text-4xl/tight px-10 py-0.5 pb-2 bg-[#F9F7F0] text-center rounded-full border-3 border-dashed">
             Hire me
           </motion.button>
-        </article>
-        <article className="col-start-5 row-start-2 bg-[#01A56B] rounded-4xl flex justify-center items-center">
+        </motion.article>
+        <motion.article className="col-start-5 row-start-2 bg-[#01A56B] rounded-4xl flex justify-center items-center"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1.5, duration: 0.3 }}
+        >
           <Image src={'./5.svg'} alt="Puggy" width={200} height={266.56} className="drop-shadow-md" draggable={false} />
-        </article>
-        <article className="col-start-2 row-start-3 bg-[#01A56B] rounded-4xl flex justify-center items-center">
+        </motion.article>
+        <motion.article className="col-start-2 row-start-3 bg-[#01A56B] rounded-4xl flex justify-center items-center"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1.8, duration: 0.3 }}
+        >
           <Image src={'./2.svg'} alt="Duckky" width={193} height={225.47} className="drop-shadow-md" draggable={false} />
-        </article>
-        <article className="col-span-3 col-start-3 row-start-3 bg-[#FE9CD5] rounded-4xl flex flex-col justify-start items-center py-10 gap-10 relative">
+        </motion.article>
+        <motion.article className="col-span-3 col-start-3 row-start-3 bg-[#FE9CD5] rounded-4xl flex flex-col justify-start items-center py-10 gap-10 relative"
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 2.1, duration: 0.3 }}
+        >
           <h1 className="text-[#F9F7F0] text-6xl uppercase">MY CONTACTS</h1>
           <div className="flex justify-center items-center gap-5">
             <div className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]">
@@ -103,8 +141,8 @@ export default function Home() {
           </div>
           <Image src={"./7.svg"} alt="smile" width={75} height={75} className="absolute top-6 left-5" draggable={false} />
           <Image src={"./8.svg"} alt="spiral" width={130} height={60} className="absolute -top-10 -right-10" draggable={false} />
-        </article>
+        </motion.article>
       </main>
-    </>
+    </section>
   );
 }
