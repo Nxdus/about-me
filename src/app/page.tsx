@@ -5,6 +5,7 @@ import { ArrowBigUpIcon, GithubIcon, InstagramIcon, MailIcon, TwitterIcon } from
 import Image from "next/image";
 import { useState } from "react";
 import Drag from "./components/cursor";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -13,9 +14,13 @@ export default function Home() {
   return (
     <section className="overflow-hidden">
 
+      {/* Cursor Component */}
       <Drag isHover={cursorHover} />
 
+      {/* Main Grid Bento */}
       <main className="h-dvh grid grid-cols-5 grid-rows-3 gap-5 justify-center bg-[#F9F7F0] select-none px-20 py-5">
+
+        {/* My Experience Box */}
         <motion.article className="col-span-2 bg-[#6F3CE7] rounded-4xl flex justify-center items-center gap-5"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -46,6 +51,8 @@ export default function Home() {
             </motion.button>
           </div>
         </motion.article>
+
+        {/* Dokky Decorate */}
         <motion.article className="col-start-3 bg-[#01A56B] rounded-4xl flex justify-center items-center gap-5"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -53,6 +60,8 @@ export default function Home() {
         >
           <Image src={'./1.svg'} alt="Dokky" width={170} height={263.66} className="drop-shadow-md" draggable={false} />
         </motion.article>
+
+        {/* My Projects Box */}
         <motion.article className="col-span-2 col-start-4 bg-[#457FB2] rounded-4xl flex justify-center items-center relative"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -71,6 +80,8 @@ export default function Home() {
           <Image src={"./star.svg"} alt="Star" width={45} height={45} className="absolute top-10 right-20" draggable={false} />
           <Image src={"./star.svg"} alt="Star" width={45} height={45} className="absolute bottom-10 left-20" draggable={false} />
         </motion.article>
+
+        {/* Go On Adventure Box */}
         <motion.article className="row-span-2 row-start-2 bg-[#FFBB4E] rounded-4xl flex justify-center items-center gap-8 flex-col relative"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -88,6 +99,8 @@ export default function Home() {
             Read
           </motion.button>
         </motion.article>
+
+        {/* Hello Box */}
         <motion.article className="col-span-3 row-start-2 bg-[#FD5A46] rounded-4xl relative"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -105,6 +118,8 @@ export default function Home() {
             Hire me
           </motion.button>
         </motion.article>
+
+        {/* Puggy Decorate */}
         <motion.article className="col-start-5 row-start-2 bg-[#01A56B] rounded-4xl flex justify-center items-center"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -112,6 +127,8 @@ export default function Home() {
         >
           <Image src={'./5.svg'} alt="Puggy" width={200} height={266.56} className="drop-shadow-md" draggable={false} />
         </motion.article>
+
+        {/* Duckky Decorate */}
         <motion.article className="col-start-2 row-start-3 bg-[#01A56B] rounded-4xl flex justify-center items-center"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -119,6 +136,8 @@ export default function Home() {
         >
           <Image src={'./2.svg'} alt="Duckky" width={193} height={225.47} className="drop-shadow-md" draggable={false} />
         </motion.article>
+
+        {/* My Contacts Box */}
         <motion.article className="col-span-3 col-start-3 row-start-3 bg-[#FE9CD5] rounded-4xl flex flex-col justify-start items-center py-10 gap-10 relative"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
@@ -126,18 +145,38 @@ export default function Home() {
         >
           <h1 className="text-[#F9F7F0] text-6xl uppercase">MY CONTACTS</h1>
           <div className="flex justify-center items-center gap-5">
-            <div className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]">
+            <motion.a href={"https://github.com/Nxdus"} target="_blank" className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.85 }}
+              onHoverStart={() => setCursorHover(true)}
+              onHoverEnd={() => setCursorHover(false)}
+            >
               <GithubIcon size={50} color="#4A4947" fill="#F9F7F0" />
-            </div>
-            <div className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]">
+            </motion.a>
+            <motion.a href={"https://www.instagram.com/_.ptxz/"} target="_blank" className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.85 }}
+              onHoverStart={() => setCursorHover(true)}
+              onHoverEnd={() => setCursorHover(false)}
+            >
               <InstagramIcon size={50} color="#4A4947" fill="#F9F7F0" />
-            </div>
-            <div className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]">
+            </motion.a>
+            <motion.a href={"mailto:paitong1550@gmail.com"} className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.85 }}
+              onHoverStart={() => setCursorHover(true)}
+              onHoverEnd={() => setCursorHover(false)}
+            >
               <MailIcon size={50} color="#4A4947" fill="#F9F7F0" />
-            </div>
-            <div className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]">
+            </motion.a>
+            <motion.a href={"https://x.com/Nxdus2007"} target="_blank" className="items-center p-5 bg-[#F9F7F0] rounded-full border-3 border-dashed border-[#4A4947]"
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.85 }} 
+              onHoverStart={() => setCursorHover(true)}
+              onHoverEnd={() => setCursorHover(false)}
+            >
               <TwitterIcon size={50} color="#4A4947" fill="#F9F7F0" />
-            </div>
+            </motion.a>
           </div>
           <Image src={"./7.svg"} alt="smile" width={75} height={75} className="absolute top-6 left-5" draggable={false} />
           <Image src={"./8.svg"} alt="spiral" width={130} height={60} className="absolute -top-10 -right-10" draggable={false} />
