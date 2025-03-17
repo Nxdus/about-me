@@ -1,17 +1,17 @@
 "use client"
 
 import { AnimatePresence, frame, motion, useSpring } from "motion/react"
-import { RefObject, useEffect, useRef } from "react"
+import { useState, useEffect } from "react"
 
-export default function Drag({ isHover }: Readonly<{ isHover: boolean }>) {
-    const ref = useRef<HTMLDivElement>(null)
-    const { x, y } = useFollowPointer(ref)
+export default function Drag({ isHover }: { isHover: boolean }) {
+    const [element, setElement] = useState<HTMLDivElement | null>(null)
+    const { x, y } = useFollowPointer(element)
 
     return (
         <AnimatePresence>
             {!isHover ? (
                 <motion.div
-                    ref={ref}
+                    ref={setElement}
                     style={{ x, y }}
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
@@ -25,16 +25,14 @@ export default function Drag({ isHover }: Readonly<{ isHover: boolean }>) {
 
 const spring = { damping: 15, stiffness: 80, restDelta: 0.001 }
 
-export function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
+export function useFollowPointer(element: HTMLDivElement | null) {
     const x = useSpring(0, spring)
     const y = useSpring(0, spring)
 
     useEffect(() => {
-        if (!ref.current) return
+        if (!element) return
 
         const handlePointerMove = ({ clientX, clientY }: MouseEvent) => {
-            const element = ref.current!
-
             frame.read(() => {
                 x.set(clientX - element.offsetLeft - element.offsetWidth / 2)
                 y.set(clientY - element.offsetTop - element.offsetHeight / 2)
@@ -42,10 +40,8 @@ export function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
         }
 
         window.addEventListener("pointermove", handlePointerMove)
-
-        return () =>
-            window.removeEventListener("pointermove", handlePointerMove)
-    }, [x, y, ref])
+        return () => window.removeEventListener("pointermove", handlePointerMove)
+    }, [element, x, y])
 
     return { x, y }
 }
