@@ -5,7 +5,6 @@ import { ArrowBigUpIcon, GithubIcon, InstagramIcon, MailIcon, TwitterIcon } from
 import Image from "next/image";
 import { useState } from "react";
 import Drag from "./components/cursor";
-import Link from "next/link";
 
 export default function Home() {
 
