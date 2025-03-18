@@ -137,7 +137,7 @@ export default function Home() {
         </motion.article>
 
         {/* My Contacts Box */}
-        <motion.article className="col-span-5 lg:col-span-4 xl:col-span-3 lg:col-start-2 xl:col-start-3 row-start-4 sm:row-start-3 bg-[#FE9CD5] rounded-4xl flex flex-col justify-start items-center py-2 sm:py-10 gap-2 sm:gap-8 relative"
+        <motion.article className="col-span-5 lg:col-span-4 xl:col-span-3 lg:col-start-2 xl:col-start-3 row-start-4 sm:row-start-3 bg-[#FE9CD5] rounded-4xl flex flex-col justify-start items-center py-5 gap-2 sm:gap-8 relative"
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 2.1, duration: 0.3 }}
